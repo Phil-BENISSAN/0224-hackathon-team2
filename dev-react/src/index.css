@@ -1,3 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --title-font: "Red Hat Text", sans-serif;
+  --text-font: "Inter", sans-serif;
+
+  --text-content-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--text-font);
+  font-weight: var(--text-content-weight);
+}
+
+html,
+body {
+  @apply h-full;
+}
+
+h1 {
+  @apply font-[var(--text-font)];
+}
