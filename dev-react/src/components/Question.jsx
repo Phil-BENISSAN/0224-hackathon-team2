@@ -1,9 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Question() {
-  return (
-    <div>
-      
-    </div>
-  )
+  return <h1 className=" text-4xl">Question</h1>;
 }
