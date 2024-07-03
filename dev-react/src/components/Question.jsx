@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 const questions = [
@@ -116,10 +116,12 @@ const questions = [
 ];
 
 const allQuestions = questions.flatMap((section) => section.questions);
+console.log(allQuestions);
 
 export default function Question() {
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
+  const navigate = useNavigate();
 
   const handleNext = () => {
     setQuestionIndex((prevIndex) =>
@@ -143,6 +145,7 @@ export default function Question() {
     event.preventDefault();
 
     console.log("Form submitted", answers);
+    navigate("/");
   };
 
   const currentQuestion = allQuestions[questionIndex];
@@ -150,7 +153,10 @@ export default function Question() {
   return (
     <main>
       <h1 className="text-4xl">Question</h1>
-      <form className="space-y-4 m-8" onSubmit={handleSubmit}>
+      <form
+        className="space-y-4 m-4 p-4 border rounded-md"
+        onSubmit={handleSubmit}
+      >
         <legend className="text-lg font-bold">
           {
             questions.find((section) =>
@@ -180,16 +186,24 @@ export default function Question() {
         </div>
         <div className="flex justify-around">
           {questionIndex > 0 && (
-            <button type="button" onClick={handlePrevious} className="btn">
+            <button
+              type="button"
+              onClick={handlePrevious}
+              className="btn btn-accent btn-outline"
+            >
               Précédent
             </button>
           )}
           {questionIndex < allQuestions.length - 1 ? (
-            <button type="button" onClick={handleNext} className="btn">
+            <button
+              type="button"
+              onClick={handleNext}
+              className="btn btn-accent btn-outline"
+            >
               Suivant
             </button>
           ) : (
-            <button type="submit" className="btn">
+            <button type="submit" className="btn btn-accent btn-outline ">
               Submit
             </button>
           )}
