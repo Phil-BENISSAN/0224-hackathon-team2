@@ -3,32 +3,32 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
+    // const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-    const handleThemeChange = () => {
-      setIsDarkTheme((prevTheme) => !prevTheme);
-    };
+    // const handleThemeChange = () => {
+    //   setIsDarkTheme((prevTheme) => !prevTheme);
+    // };
   
-    useEffect(() => {
-      themeChange(isDarkTheme);
-    }, [isDarkTheme]);
+    // useEffect(() => {
+    //   themeChange(isDarkTheme);
+    // }, [isDarkTheme]);
   
-    const themeChange = (isDarkTheme) => {
-      const root = document.documentElement;
-      root.setAttribute("data-theme", isDarkTheme ? "retro" : "coffee");
-    };
+    // const themeChange = (isDarkTheme) => {
+    //   const root = document.documentElement;
+    //   root.setAttribute("data-theme", isDarkTheme ? "base-100" : "neutral");
+    // };
   return (
-    <div className="navbar bg-base-100">
-  <div className="flex-1">
-    <a className="btn btn-ghost text-xl">Accessibil-IT</a>
+    <div className=" flex items-center sticky top-0 z-10 bg-[#f8eeec] border-b border-accent ">
+  <div className="flex-1 items-center">
+    <Link to="/"><img src="https://cdn.discordapp.com/attachments/1257972687305707567/1258344196952162336/Logo.png?ex=6687b3db&is=6686625b&hm=fed8b59876a20f90cb9d4be1af9ca9e100d8dadc89660be95de5d1bc5897f31d&" alt="" className=" w-40 m-0 p-0 ml-28 h-20" /></Link>
   </div>
-  <div className="flex-none">
+  <div className="flex-none mr-28">
     <ul className="menu menu-horizontal px-1">
-      <li><Link>Accueil</Link></li>
-      <li><Link>A propos</Link></li>
-      <li><Link>Test</Link></li>
-      <li><Link className="btn btn-primary mx-2">Se connecter</Link></li>
-      <li>
+      <li className="text-xl"><Link>Accueil</Link></li>
+      <li className="text-xl"><Link>A propos</Link></li>
+      <li className="text-xl"><Link>Test</Link></li>
+      <li><Link className="btn relative top-[-2px] btn-primary mx-2">Se connecter</Link></li>
+      {/* <li>
       <label className="grid cursor-pointer place-items-center">
           <input
             type="checkbox"
@@ -68,7 +68,7 @@ export default function NavBar() {
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </label>
-      </li>
+      </li> */}
     </ul>
   </div>
 </div>
