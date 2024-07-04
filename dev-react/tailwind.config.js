@@ -5,15 +5,20 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   daisyui: {
-    themes: ["light", "dark", "retro", "coffee"],
-    darkTheme: "coffee", // name of one of the included themes for dark mode
-    base: true, // applies background color and foreground color for root element by default
-    styled: true, // include daisyUI colors and design decisions for all components
-    utils: true, // adds responsive and modifier utility classes
-    prefix: "", // prefix for daisyUI classnames (components, modifiers and responsive class names. Not colors)
-    logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
-    themeRoot: ":root", // The element that receives theme color CSS variables
-  },
+    themes: [
+      {
+        mytheme: {
+          
+"primary": "#f07168",
+"secondary": "#0081a8",
+"accent": "#43135b",
+"neutral": "#2f2f2f",
+"success": "#ffb782",
+"base-100": "#ffffff",
+          },
+        },
+      ],
+    },
   plugins: [
     require('daisyui'),
   ],

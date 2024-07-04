@@ -18,7 +18,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/question",
-        element: <Question />
+        element: <Question />,
+        loader: async () => {
+          const response = await fetch("http://localhost:8000/softskills_test")
+          const data = await response.json()
+          console.log(data);
+          return data
+        }
       },
       {
         path: "/about",
