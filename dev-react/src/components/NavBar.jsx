@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
     const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -17,46 +18,18 @@ export default function NavBar() {
       root.setAttribute("data-theme", isDarkTheme ? "retro" : "coffee");
     };
   return (
-    <div className="navbar sticky top-0 z-10 bg-base-100">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h7"
-              />
-            </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-          >
-            <li>
-              <a>Homepage</a>
-            </li>
-            <li>
-              <a>Portfolio</a>
-            </li>
-            <li>
-              <a>About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="navbar-center">
-        <a className="btn btn-ghost text-xl">Accessibil-IT</a>
-      </div>
-      <div className="navbar-end">
-        <label className="grid cursor-pointer place-items-center">
+    <div className="navbar bg-base-100">
+  <div className="flex-1">
+    <a className="btn btn-ghost text-xl">Accessibil-IT</a>
+  </div>
+  <div className="flex-none">
+    <ul className="menu menu-horizontal px-1">
+      <li><Link>Accueil</Link></li>
+      <li><Link>A propos</Link></li>
+      <li><Link>Test</Link></li>
+      <li><Link className="btn btn-primary mx-2">Se connecter</Link></li>
+      <li>
+      <label className="grid cursor-pointer place-items-center">
           <input
             type="checkbox"
             value="synthwave"
@@ -95,7 +68,9 @@ export default function NavBar() {
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </label>
-      </div>
-    </div>
+      </li>
+    </ul>
+  </div>
+</div>
   );
 }
