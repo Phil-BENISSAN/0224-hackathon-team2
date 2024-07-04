@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import HeaderCard from "../components/HeaderCard";
-import Footer from "../components/Footer";
 import Review from "../components/Review";
 import Concept from "../components/Concept";
-import NavBar from "../components/NavBar";
 
 export default function HomePage() {
   return (
@@ -51,7 +49,6 @@ export default function HomePage() {
         <Review/>
         <Concept/>
       </main>
-      <Footer />
     </body>
   );
 }
