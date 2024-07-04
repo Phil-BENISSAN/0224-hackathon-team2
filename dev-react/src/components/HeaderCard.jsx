@@ -3,7 +3,7 @@ import React from "react";
 export default function HeaderCard() {
   return (
     <>
-      <h1 className="text-center text-4xl font-bold m-10">Trouvez votre place dans le monde IT</h1>
+      <h2 className="text-center text-4xl my-16">Pourquoi choisir Accessibil-IT ?</h2>
     <section className="flex justify-center gap-16">
       <article className="card card-compact bg-base-100 w-64 shadow-xl">
         <figure>
