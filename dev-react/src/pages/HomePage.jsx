@@ -2,13 +2,11 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import HeaderCard from "../components/HeaderCard";
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
 
 export default function HomePage() {
   return (
     <body>
       <main className="min-h-screen">
-        <NavBar />
         <HeaderCard />
         <h2 className="text-center text-4xl font-bold m-10">
           Ils nous font confiance

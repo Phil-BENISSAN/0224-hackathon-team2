@@ -25,8 +25,8 @@ export default function NavBar() {
   <div className="flex-none">
     <ul className="menu menu-horizontal px-1">
       <li><Link>Accueil</Link></li>
-      <li><Link>A propos</Link></li>
-      <li><Link>Test</Link></li>
+      <li><Link to="/about">A propos</Link></li>
+      <li><Link to="/question">Test</Link></li>
       <li><Link className="btn btn-primary mx-2">Se connecter</Link></li>
       <li>
       <label className="grid cursor-pointer place-items-center">
