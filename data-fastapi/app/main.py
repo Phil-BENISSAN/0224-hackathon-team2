@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 import hackathon3_qcm_tech as qcm
 import pandas as pd
+import ML
 
 app = FastAPI()
 
@@ -34,6 +35,10 @@ def return_tech_domaines():
 def return_tech_QCM(domaine,level):
   if domaine in qcm.domaines_dict.keys() and int(level) in [0,1,2] :
     return qcm.domaines_dict[domaine][int(level)]
+
+@app.get('/get_candidate/{recruteur_id}')
+def return_tech_QCM(recruteur_id):
+  return ML.get_candidate_id(recruteur_id)
 
 
 if __name__ == '__main__':
