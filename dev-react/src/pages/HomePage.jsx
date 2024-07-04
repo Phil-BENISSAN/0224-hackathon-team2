@@ -2,15 +2,14 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import HeaderCard from "../components/HeaderCard";
 import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
 import Review from "../components/Review";
 import Concept from "../components/Concept";
+import NavBar from "../components/NavBar";
 
 export default function HomePage() {
   return (
     <body className="overflow-hidden">
       <main className="min-h-screen">
-        <NavBar />
         <div className="flex flex-col items-center justify-center h-[37vw] bg-[url('https://cdn.discordapp.com/attachments/1257972687305707567/1258351513240211476/Frame_309.png?ex=6687baab&is=6686692b&hm=06371486cf7caf551b818aba7f0e9066b2b383b2de035f355c970f1f0de041b4&')] bg-center bg-cover h-[25rem] mb-16 ">
           <h1 className="text-6xl font-bold text-accent m-10 mt-16 mb-4">
             Trouvez votre place dans le monde IT

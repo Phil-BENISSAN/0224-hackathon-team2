@@ -149,14 +149,12 @@ export default function Question() {
   };
 
   const currentQuestion = allQuestions[questionIndex];
+  const currentAnswer = answers[`q${questionIndex + 1}`];
 
   return (
     <main>
       <h1 className="text-4xl">Question</h1>
-      <form
-        className="space-y-4 m-4 p-4 border rounded-md"
-        onSubmit={handleSubmit}
-      >
+      <form className="space-y-4 m-8" onSubmit={handleSubmit}>
         <legend className="text-lg font-bold">
           {
             questions.find((section) =>
@@ -166,13 +164,11 @@ export default function Question() {
         </legend>
         <div className="form-control">
           <label className="label cursor-pointer">
-            <span className="label-text text-md font-bold">
-              {currentQuestion.text}
-            </span>
+            <span className="label-text">{currentQuestion.text}</span>
           </label>
           {currentQuestion.options.map((option, optionIndex) => (
             <label key={optionIndex} className="label cursor-pointer">
-              <span className=" text-xs ">{option.text}</span>
+              <span className="label-text">{option.text}</span>
               <input
                 type="radio"
                 name={`q${questionIndex + 1}`}
@@ -185,12 +181,9 @@ export default function Question() {
           ))}
         </div>
         <div className="flex justify-around">
+          <Link to="/">Accueil</Link>
           {questionIndex > 0 && (
-            <button
-              type="button"
-              onClick={handlePrevious}
-              className="btn btn-accent btn-outline"
-            >
+            <button type="button" onClick={handlePrevious} className="btn">
               Précédent
             </button>
           )}
@@ -198,18 +191,16 @@ export default function Question() {
             <button
               type="button"
               onClick={handleNext}
-              className="btn btn-accent btn-outline"
+              className="btn"
+              disabled={!currentAnswer}
             >
               Suivant
             </button>
           ) : (
-            <button type="submit" className="btn btn-accent btn-outline ">
+            <button type="submit" className="btn" disabled={!currentAnswer}>
               Submit
             </button>
           )}
-        </div>
-        <div className="flex justify-center">
-          <Link to="/">Accueil</Link>
         </div>
       </form>
     </main>

@@ -24,10 +24,10 @@ export default function NavBar() {
   </div>
   <div className="flex-none mr-28">
     <ul className="menu menu-horizontal px-1">
-      <li className="text-xl"><Link>Accueil</Link></li>
-      <li className="text-xl"><Link>A propos</Link></li>
-      <li className="text-xl"><Link>Test</Link></li>
-      <li><Link className="btn relative top-[-2px] btn-primary mx-2">Se connecter</Link></li>
+      <li><Link>Accueil</Link></li>
+      <li><Link to="/about">A propos</Link></li>
+      <li><Link to="/question">Test</Link></li>
+      <li><Link className="btn btn-primary mx-2">Se connecter</Link></li>
       {/* <li>
       <label className="grid cursor-pointer place-items-center">
           <input
